@@ -1,0 +1,67 @@
+
+**** Build of configuration Release for project mogai ****
+
+"D:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: ../Font_lib.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="Font_lib.d"  "../Font_lib.c"
+
+>> Compilation failure
+subdir_rules.mk:7: recipe for target 'Font_lib.obj' failed
+"../Font_lib.c", line 9: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../Font_lib.c".
+Compilation terminated.
+gmake: *** [Font_lib.obj] Error 1
+'Building file: ../LCD_TFT_ILI9341.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="LCD_TFT_ILI9341.d"  "../LCD_TFT_ILI9341.c"
+
+>> Compilation failure
+subdir_rules.mk:14: recipe for target 'LCD_TFT_ILI9341.obj' failed
+"../LCD_TFT_ILI9341.c", line 8: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../LCD_TFT_ILI9341.c".
+Compilation terminated.
+gmake: *** [LCD_TFT_ILI9341.obj] Error 1
+'Building file: ../LCD_display.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="LCD_display.d"  "../LCD_display.c"
+
+>> Compilation failure
+subdir_rules.mk:21: recipe for target 'LCD_display.obj' failed
+"../LCD_display.c", line 11: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../LCD_display.c".
+Compilation terminated.
+gmake: *** [LCD_display.obj] Error 1
+'Building file: ../gpio_if.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio_if.d"  "../gpio_if.c"
+
+>> Compilation failure
+subdir_rules.mk:28: recipe for target 'gpio_if.obj' failed
+"../gpio_if.c", line 44: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../gpio_if.c".
+Compilation terminated.
+gmake: *** [gpio_if.obj] Error 1
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+
+>> Compilation failure
+subdir_rules.mk:35: recipe for target 'main.obj' failed
+"../main.c", line 5: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../main.c".
+Compilation terminated.
+gmake: *** [main.obj] Error 1
+'Building file: ../pinmux.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me --include_path="D:/zigbee/3/mogai" --include_path="/inc" --include_path="/driverlib" --include_path="/example/common" --include_path="/" --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" -g --define=cc3200 --define=ccs --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="pinmux.d"  "../pinmux.c"
+
+>> Compilation failure
+subdir_rules.mk:42: recipe for target 'pinmux.obj' failed
+"../pinmux.c", line 45: fatal error #1965: cannot open source file "hw_types.h"
+1 catastrophic error detected in the compilation of "../pinmux.c".
+Compilation terminated.
+gmake: *** [pinmux.obj] Error 1
+gmake: Target 'all' not remade because of errors.
+
+**** Build Finished ****

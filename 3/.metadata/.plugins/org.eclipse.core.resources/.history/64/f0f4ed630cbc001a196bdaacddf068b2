@@ -1,0 +1,239 @@
+// Standard includes
+#include <stdio.h>
+
+// Driverlib includes
+#include "hw_types.h"
+#include "hw_ints.h"
+#include "hw_memmap.h"
+#include "hw_common_reg.h"
+#include "interrupt.h"
+#include "hw_apps_rcm.h"
+#include "prcm.h"
+#include "rom.h"
+#include "rom_map.h"
+#include "prcm.h"
+#include "gpio.h"
+#include "utils.h"
+
+
+// Common interface includes
+#include "gpio_if.h"
+#include "uart_if.h"
+#include "i2c_if.h"
+#include "common.h"
+#include "tmp006drv.h"
+#include "pinmux.h"
+
+#define APPLICATION_VERSION     "1.1.1"
+
+#include "LCD_TFT_ILI9341.h"
+#include "Font_lib.h"
+#include "LCD_Display.h"
+
+
+//*****************************************************************************
+//                 GLOBAL VARIABLES -- Start
+//*****************************************************************************
+#if defined(ccs)
+extern void (* const g_pfnVectors[])(void);
+#endif
+#if defined(ewarm)
+extern uVectorEntry __vector_table;
+#endif
+
+
+static const char pcDigits[] = "0123456789";
+
+
+void wait_ms(long i)
+{
+ while(i)
+	  {__delay_cycles(20000);;i--;}
+
+}
+
+static unsigned short itoa(char cNum, char *cString)
+{
+    char* ptr;
+    char uTemp = cNum;
+    unsigned short length;
+
+    // value 0 is a special case
+    if (cNum == 0)
+    {
+        length = 1;
+        *cString = '0';
+
+        return length;
+    }
+
+    // Find out the length of the number, in decimal base
+    length = 0;
+    while (uTemp > 0)
+    {
+        uTemp /= 10;
+        length++;
+    }
+
+    // Do the actual formatting, right to left
+    uTemp = cNum;
+    ptr = cString + length;
+    while (uTemp > 0)
+    {
+        --ptr;
+        *ptr = pcDigits[uTemp % 10];
+        uTemp /= 10;
+    }
+
+    return length;
+}
+
+char * ftoa(float dValue, char * chBuffer , int size)
+{
+    char * pch = chBuffer;
+    int temp;
+    int i;
+    if(!pch)
+      return 0;
+
+    if(!(dValue <= 1E-307 && dValue >= -1E-307)){
+
+        if(dValue < 0){
+            *pch++ = '-';
+            dValue = -dValue;
+        }
+
+        temp = (int)dValue;
+        itoa(temp , pch);
+        unsigned char ucLen = strlen(pch);
+        pch += ucLen;
+        *pch++ = '.';
+        dValue -= (int)dValue;
+        ucLen = size - ucLen - 1;
+
+        for(i = 0; i < ucLen; i++){
+            dValue = dValue  * 10;
+            temp = (int)dValue;
+            itoa(temp, pch);
+            pch += strlen(pch);
+            dValue -= (int)dValue;
+        }
+    }else
+        *pch++ = '0';
+
+    pch--;
+    return chBuffer;
+}
+
+
+
+
+
+
+
+
+//*****************************************************************************
+//LCD
+//! Board Initialization & Configuration
+//!
+//! \param  None
+//!
+//! \return None
+//
+//*****************************************************************************
+static void
+BoardInit(void)
+{
+/* In case of TI-RTOS vector table is initialize by OS itself */
+#ifndef USE_TIRTOS
+    //
+    // Set vector table base
+    //
+#if defined(ccs)
+    MAP_IntVTableBaseSet((unsigned long)&g_pfnVectors[0]);
+#endif
+#if defined(ewarm)
+    MAP_IntVTableBaseSet((unsigned long)&__vector_table);
+#endif
+#endif
+
+    //
+    // Enable Processor
+    //
+    MAP_IntMasterEnable();
+    MAP_IntEnable(FAULT_SYSTICK);
+
+    PRCMCC3200MCUInit();
+}
+
+
+/*
+ * main.c
+ */
+void main()
+{
+
+	    long   lRetVal = -1;
+	    float Temp;
+	    char tempch[12];
+    //
+    // Initialize Board configurations
+    //
+    BoardInit();
+
+    //
+    // Power on the corresponding GPIO port B for 9,10,11.
+    // Set up the GPIO lines to mode 0 (GPIO)
+    //
+    PinMuxConfig();
+    InitTerm();
+    GPIO_IF_LedConfigure(LED1);
+
+        //Turn Off the LEDs
+        GPIO_IF_LedOff(MCU_RED_LED_GPIO);
+
+        //
+        // I2C Init
+        //
+        lRetVal = I2C_IF_Open(I2C_MASTER_MODE_FST);
+        if(lRetVal < 0)
+        {
+            ERR_PRINT(lRetVal);
+            LOOP_FOREVER();
+        }
+
+        //Init Temprature Sensor
+        lRetVal = TMP006DrvOpen();
+        if(lRetVal < 0)
+        {
+            ERR_PRINT(lRetVal);
+            LOOP_FOREVER();
+        }
+
+
+    lcd_init();
+    LCD_ILI9341_TFT_background(White);
+    LCD_ILI9341_TFT_foreground(Black);
+    LCD_Show_StandbyPage();
+    LCD_ILI9341_TFT_fillrect(0,0,319,239,White);
+    LCD_Show_StandbyPage();
+    char aaa[3];
+    aaa="bbb";
+	while(1)
+	{
+
+
+//		TMP006DrvGetTemp(&Temp);
+//		memset(tempch,0,sizeof(tempch));
+//		ftoa(Temp,tempch,sizeof(tempch)-1);
+		LCD_Show_Tempreture(aaa);
+		  //  	UART_PRINT("TEMP=%s\r\n",tempch);
+
+
+
+		MAP_UtilsDelay(8000000);
+
+	}
+}
+
+

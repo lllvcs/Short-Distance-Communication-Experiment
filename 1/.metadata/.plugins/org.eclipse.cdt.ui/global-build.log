@@ -1,0 +1,39 @@
+
+**** Build of configuration Release for project DY-IoT-PB_KEY ****
+
+"D:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common/gpio_if.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -O2 --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --define=cc3200 --define=ccs --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="gpio_if.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common/gpio_if.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common/gpio_if.c'
+' '
+'Building file: ../main.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -O2 --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --define=cc3200 --define=ccs --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="main.d"  "../main.c"
+'Finished building: ../main.c'
+' '
+'Building file: ../pin_mux_config.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -O2 --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --define=cc3200 --define=ccs --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="pin_mux_config.d"  "../pin_mux_config.c"
+'Finished building: ../pin_mux_config.c'
+' '
+'Building file: ../startup_ccs.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -O2 --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/example/common" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --define=cc3200 --define=ccs --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi --preproc_with_compile --preproc_dependency="startup_ccs.d"  "../startup_ccs.c"
+'Finished building: ../startup_ccs.c'
+' '
+'Building target: DY-IoT-PB_KEY.out'
+'Invoking: ARM Linker'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -O2 --define=cc3200 --define=ccs --diag_wrap=off --diag_warning=225 --display_error_number --abi=eabi -z -m"DY-IoT-PB_KEY.map" --stack_size=0x512 --heap_size=0x0 -i"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/lib" -i"C:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib/ccs/Release" -i"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --reread_libs --display_error_number --warn_sections --diag_wrap=off --xml_link_info="DY-IoT-PB_KEY_linkInfo.xml" --rom_model -o "DY-IoT-PB_KEY.out" "./gpio_if.obj" "./main.obj" "./pin_mux_config.obj" "./startup_ccs.obj" "../cc3200v1p32.cmd"  -llibc.a -ldriverlib.a 
+<Linking>
+'Finished building target: DY-IoT-PB_KEY.out'
+' '
+
+**** Build Finished ****
+
+**** Build of configuration Release for project DY-IoT-PB_KEY ****
+
+"D:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+gmake: Nothing to be done for 'all'.
+
+**** Build Finished ****

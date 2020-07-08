@@ -1,0 +1,45 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CMD_SRCS += \
+../cc3200v1p32.cmd 
+
+C_SRCS += \
+../main.c \
+../pin_mux_config.c \
+../startup_ccs.c \
+../timer_if.c 
+
+OBJS += \
+./main.obj \
+./pin_mux_config.obj \
+./startup_ccs.obj \
+./timer_if.obj 
+
+C_DEPS += \
+./main.d \
+./pin_mux_config.d \
+./startup_ccs.d \
+./timer_if.d 
+
+C_DEPS__QUOTED += \
+"main.d" \
+"pin_mux_config.d" \
+"startup_ccs.d" \
+"timer_if.d" 
+
+OBJS__QUOTED += \
+"main.obj" \
+"pin_mux_config.obj" \
+"startup_ccs.obj" \
+"timer_if.obj" 
+
+C_SRCS__QUOTED += \
+"../main.c" \
+"../pin_mux_config.c" \
+"../startup_ccs.c" \
+"../timer_if.c" 
+
+

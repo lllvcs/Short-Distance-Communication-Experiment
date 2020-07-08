@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="325" key="DIALOG_WIDTH"/>
+		<item value="142" key="DIALOG_Y_ORIGIN"/>
+		<item value="1283" key="DIALOG_X_ORIGIN"/>
+		<item value="435" key="DIALOG_HEIGHT"/>
+		<item value="1|Microsoft YaHei UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Microsoft YaHei UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="true" key="wrap"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="isRegEx"/>
+		<item value="false" key="incremental"/>
+		<item value="false" key="wholeword"/>
+		<item value="PRCMPeripheralClkEnable" key="selection"/>
+		<list key="findhistory">
+			<item value="GPIOA3_BASE, 0x80, ~0x80"/>
+			<item value="PRCMPeripheralClkEnable"/>
+			<item value="    InitPWMModules();"/>
+			<item value="aaa"/>
+			<item value="iLoopCnt"/>
+			<item value="PRCM_TIMERA1"/>
+			<item value="21"/>
+		</list>
+		<list key="replacehistory">
+		</list>
+	</section>
+</section>

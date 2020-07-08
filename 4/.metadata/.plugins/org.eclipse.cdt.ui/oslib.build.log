@@ -1,0 +1,60 @@
+
+**** Build of configuration free_rtos for project oslib ****
+
+"D:\\ti\\ccsv6\\utils\\bin\\gmake" -k all 
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/croutine.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="croutine.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/croutine.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/croutine.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/MemMang/heap_3.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="heap_3.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/MemMang/heap_3.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/MemMang/heap_3.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/list.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="list.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/list.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/list.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib/osi_freertos.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="osi_freertos.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib/osi_freertos.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib/osi_freertos.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/port.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="port.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/port.c"
+"D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/port.c", line 348: warning #225-D: function "prvPortStartFirstTask" declared implicitly
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/port.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/portasm.asm'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="portasm.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/portasm.asm"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3/portasm.asm'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/queue.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="queue.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/queue.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/queue.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/tasks.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="tasks.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/tasks.c"
+"D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/tasks.c", line 2156: warning #225-D: function "portCLZ" declared implicitly
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/tasks.c'
+' '
+'Building file: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/timers.c'
+'Invoking: ARM Compiler'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib -me -Ooff --include_path="D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/driverlib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/inc" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/oslib" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/include" --include_path="D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/portable/CCS/ARM_CM3" -g --gcc --define=cc3200 --diag_warning=225 --diag_wrap=off --display_error_number --abi=eabi --printf_support=full --ual --preproc_with_compile --preproc_dependency="timers.d"  "D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/timers.c"
+'Finished building: D:/ti/CC3200SDK_1.2.0/cc3200-sdk/third_party/FreeRTOS/source/timers.c'
+' '
+'Building target: free_rtos.a'
+'Invoking: ARM Archiver'
+"D:/ti/ccsv6/tools/compiler/ti-cgt-arm_15.12.1.LTS/bin/armar" r "free_rtos.a" "./croutine.obj" "./heap_3.obj" "./list.obj" "./osi_freertos.obj" "./port.obj" "./portasm.obj" "./queue.obj" "./tasks.obj" "./timers.obj"   
+  ==>  new archive 'free_rtos.a'
+  ==>  building archive 'free_rtos.a'
+'Finished building target: free_rtos.a'
+' '
+
+**** Build Finished ****

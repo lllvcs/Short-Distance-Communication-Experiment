@@ -1,0 +1,176 @@
+// Standard includes
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+// Driverlib includes
+#include "hw_types.h"
+#include "hw_ints.h"
+#include "hw_memmap.h"
+#include "hw_common_reg.h"
+#include "interrupt.h"
+#include "hw_apps_rcm.h"
+#include "prcm.h"
+#include "rom.h"
+#include "rom_map.h"
+#include "prcm.h"
+#include "gpio.h"
+#include "utils.h"
+
+#include "hw_gpio.h"
+#include "pin.h"
+#include "gpio_if.h"
+
+#include "pin_mux_config.h"
+
+#if defined(ccs)
+extern void (*const g_pfnVectors[])(void);
+#endif
+#if defined(ewarm)
+extern uVectorEntry __vector_table;
+#endif
+
+unsigned char key3flag, key4flag;
+//*****************************************************************************
+//
+//! Board Initialization & Configuration
+//!
+//! \param  None
+//!
+//! \return None
+//
+//*****************************************************************************
+static void
+BoardInit(void)
+{
+/* In case of TI-RTOS vector table is initialize by OS itself */
+#ifndef USE_TIRTOS
+    //
+    // Set vector table base
+    //
+#if defined(ccs)
+    MAP_IntVTableBaseSet((unsigned long)&g_pfnVectors[0]);
+#endif
+#if defined(ewarm)
+    MAP_IntVTableBaseSet((unsigned long)&__vector_table);
+#endif
+#endif
+    //
+    // Enable Processor
+    //
+    MAP_IntMasterEnable();
+    MAP_IntEnable(FAULT_SYSTICK);
+
+    PRCMCC3200MCUInit();
+}
+
+void Key3Handler(void)
+{
+    unsigned long ulPinState = GPIOIntStatus(GPIOA2_BASE, 1);
+    if (ulPinState & GPIO_INT_PIN_7)
+    {
+        GPIOIntClear(GPIOA2_BASE, GPIO_INT_PIN_7);
+        key3flag = 1;
+    }
+}
+
+void Key4Handler(void)
+{
+    unsigned long ulPinState = GPIOIntStatus(GPIOA3_BASE, 1);
+    if (ulPinState & GPIO_INT_PIN_0)
+    {
+        GPIOIntClear(GPIOA3_BASE, GPIO_INT_PIN_0);
+        key4flag = 1;
+    }
+}
+
+void Keyinit(void)
+{
+    GPIOIntTypeSet(GPIOA2_BASE, GPIO_PIN_7, GPIO_RISING_EDGE);
+    IntPrioritySet(INT_GPIOA2, INT_PRIORITY_LVL_1);
+    GPIOIntRegister(GPIOA2_BASE, Key3Handler);
+    GPIOIntClear(GPIOA2_BASE, GPIO_INT_PIN_7);
+    IntPendClear(INT_GPIOA2);
+    IntEnable(INT_GPIOA2);
+    GPIOIntEnable(GPIOA2_BASE, GPIO_INT_PIN_7);
+
+    GPIOIntTypeSet(GPIOA3_BASE, GPIO_PIN_0, GPIO_RISING_EDGE);
+    IntPrioritySet(INT_GPIOA3, INT_PRIORITY_LVL_1);
+    GPIOIntRegister(GPIOA3_BASE, Key4Handler);
+    GPIOIntClear(GPIOA3_BASE, GPIO_INT_PIN_0);
+    IntPendClear(INT_GPIOA3);
+    IntEnable(INT_GPIOA3);
+    GPIOIntEnable(GPIOA3_BASE, GPIO_INT_PIN_0);
+}
+
+/*
+ *
+ * main.c
+ */
+void main(void)
+{
+
+    //
+    // Initialize Board configurations
+    //
+    BoardInit();
+
+    //
+    // Power on the corresponding GPIO port B for 9,10,11.
+    // Set up the GPIO lines to mode 0 (GPIO)
+    //
+    PinMuxConfig();
+
+    //button init
+    Keyinit();
+    GPIO_IF_LedConfigure(LED1 | LED2 | LED3);
+    int states = 0;
+
+    while (1)
+    {
+        if (key3flag == 1)
+        {
+            key3flag = 0;
+            if (states == 0 || states == 2)
+                states = 1;
+            if (states == 1)
+                states = 2;
+        }
+        if (key4flag == 1)
+        {
+            key4flag = 0;
+            states = 0;
+        }
+        if (states == 0)
+            GPIO_IF_LedOff(MCU_ALL_LED_IND);
+        if (states == 1)
+        {
+            GPIO_IF_LedOn(MCU_RED_LED_GPIO);
+            MAP_UtilsDelay(800000);
+            GPIO_IF_LedOff(MCU_RED_LED_GPIO);
+            MAP_UtilsDelay(800000);
+
+            GPIO_IF_LedOn(MCU_ORANGE_LED_GPIO);
+            MAP_UtilsDelay(800000);
+            GPIO_IF_LedOff(MCU_ORANGE_LED_GPIO);
+            MAP_UtilsDelay(800000);
+
+            GPIO_IF_LedOn(MCU_GREEN_LED_GPIO);
+            MAP_UtilsDelay(800000);
+            GPIO_IF_LedOff(MCU_GREEN_LED_GPIO);
+            MAP_UtilsDelay(800000);
+
+            GPIO_IF_LedOn(MCU_ORANGE_LED_GPIO);
+            MAP_UtilsDelay(800000);
+            GPIO_IF_LedOff(MCU_ORANGE_LED_GPIO);
+            MAP_UtilsDelay(800000);
+        }
+        if (states == 2)
+        {
+            GPIO_IF_LedOn(MCU_ALL_LED_IND);
+            MAP_UtilsDelay(500000);
+            GPIO_IF_LedOff(MCU_ALL_LED_IND);
+            MAP_UtilsDelay(500000);
+        }
+    }
+}

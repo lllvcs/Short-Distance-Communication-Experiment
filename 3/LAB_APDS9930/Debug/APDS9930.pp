@@ -1,0 +1,5 @@
+# FIXED
+
+APDS9930.obj: ../APDS9930.c
+
+../APDS9930.c: 

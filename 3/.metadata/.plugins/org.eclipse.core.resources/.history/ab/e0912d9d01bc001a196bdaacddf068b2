@@ -1,0 +1,114 @@
+// Standard includes
+#include <stdio.h>
+
+// Driverlib includes
+#include "hw_types.h"
+#include "hw_ints.h"
+#include "hw_memmap.h"
+#include "hw_common_reg.h"
+#include "interrupt.h"
+#include "hw_apps_rcm.h"
+#include "prcm.h"
+#include "rom.h"
+#include "rom_map.h"
+#include "prcm.h"
+#include "gpio.h"
+#include "utils.h"
+
+// Common interface includes
+#include "gpio_if.h"
+
+#include "pinmux.h"
+
+#define APPLICATION_VERSION     "1.1.1"
+
+#include "LCD_TFT_ILI9341.h"
+#include "Font_lib.h"
+#include "LCD_Display.h"
+
+
+//*****************************************************************************
+//                 GLOBAL VARIABLES -- Start
+//*****************************************************************************
+#if defined(ccs)
+extern void (* const g_pfnVectors[])(void);
+#endif
+#if defined(ewarm)
+extern uVectorEntry __vector_table;
+#endif
+
+
+
+void wait_ms(long i)
+{
+ while(i)
+	  {__delay_cycles(20000);;i--;}
+
+}
+
+
+
+
+//*****************************************************************************
+//
+//! Board Initialization & Configuration
+//!
+//! \param  None
+//!
+//! \return None
+//
+//*****************************************************************************
+static void
+BoardInit(void)
+{
+/* In case of TI-RTOS vector table is initialize by OS itself */
+#ifndef USE_TIRTOS
+    //
+    // Set vector table base
+    //
+#if defined(ccs)
+    MAP_IntVTableBaseSet((unsigned long)&g_pfnVectors[0]);
+#endif
+#if defined(ewarm)
+    MAP_IntVTableBaseSet((unsigned long)&__vector_table);
+#endif
+#endif
+
+    //
+    // Enable Processor
+    //
+    MAP_IntMasterEnable();
+    MAP_IntEnable(FAULT_SYSTICK);
+
+    PRCMCC3200MCUInit();
+}
+
+
+/*
+ * main.c
+ */
+void main(void) {
+
+    //
+    // Initialize Board configurations
+    //
+    BoardInit();
+
+    //
+    // Power on the corresponding GPIO port B for 9,10,11.
+    // Set up the GPIO lines to mode 0 (GPIO)
+    //
+    PinMuxConfig();
+
+    lcd_init();
+    LCD_ILI9341_TFT_background(White);
+    LCD_ILI9341_TFT_foreground(Black);
+LCD_Show_StandbyPage();
+LCD_ILI9341_TFT_fillrect(0, 200,319,39,Yellow);
+	while(1)
+	{
+
+	}
+}
+
+

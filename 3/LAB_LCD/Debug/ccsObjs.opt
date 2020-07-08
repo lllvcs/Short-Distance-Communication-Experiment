@@ -1,0 +1,1 @@
+"./Font_lib.obj" "./LCD_TFT_ILI9341.obj" "./LCD_display.obj" "./gpio_if.obj" "./i2c_if.obj" "./main.obj" "./pinmux.obj" "./startup_ccs.obj" "./tmp006drv.obj" "./uart_if.obj" "./utils_if.obj" "../cc3200v1p32.cmd" -llibc.a -ldriverlib.a 
